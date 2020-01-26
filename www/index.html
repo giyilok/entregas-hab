@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Practica 1 html</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Vacas</h1>
+      <nav>
+        <ul>
+          <li>
+            <p><a href="#texto1" title="Lorem 1">Lorem, ipsum.</a></p>
+          </li>
+          <li>
+            <p><a href="#texto2" title="Lorem 2">Lorem, ipsum.</a></p>
+          </li>
+          <li>
+            <p><a href="comprar.html" title="Comprar">Comprar</a></p>
+          </li>
+        </ul>
+      </nav>
+      <img src="." alt="Vaca blanca esplendida" />
+    </header>
+
+    <main>
+      <section id="texto1">
+        <h2>Lorem, ipsum.</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ullam
+          nihil nobis incidunt, enim similique odit debitis consectetur eius vel
+          quaerat sunt aliquam, facere iusto beatae provident numquam nisi
+          ipsam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. At sequi,
+          quidem voluptas voluptatum dolorem molestias vero reiciendis facilis,
+          architecto maiores odit. Ab aperiam sint error harum! Modi autem odit
+          odio!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
+          corporis hic temporibus eius voluptatibus eum enim reiciendis, id unde
+          rem! Sapiente inventore obcaecati libero amet quo dolores
+          necessitatibus, ut veritatis.
+        </p>
+      </section>
+
+      <section id="vacas">
+        <ul>
+          <li>
+            <article id="Vaca1">
+              <header>
+                <img src="." alt="Vaca 1 rubia" />
+              </header>
+              <section>
+                <h2>Vaca 1</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facere, sit?
+                </p>
+              </section>
+              <footer>
+                <nav>
+                  <p><a href="comprar.html">Comprar</a></p>
+                </nav>
+              </footer>
+            </article>
+          </li>
+
+          <li>
+            <article id="Vaca2">
+              <header>
+                <img src="." alt="Vaca 2 blanca" />
+              </header>
+              <section>
+                <h2>Vaca 2</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facere, sit?
+                </p>
+              </section>
+              <footer>
+                <nav>
+                  <p><a href="coprar.html">Comprar</a></p>
+                </nav>
+              </footer>
+            </article>
+          </li>
+
+          <li>
+            <article id="Vaca3">
+              <header>
+                <img src="." alt="Vaca 3 morena" />
+              </header>
+              <section>
+                <h2>Vaca 3</h2>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Facere, sit?
+                </p>
+              </section>
+
+              <footer>
+                <nav>
+                  <p><a href="comprar.html">Comprar</a></p>
+                </nav>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <section id="formulario">
+      <form action="GET" method="." id="texto2">
+        <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+
+        <ul>
+          <li>
+            <label for="nombre">Nombre y apellidos</label>
+            <input type="text" name="nombre" id="nombre" required />
+
+            <label for="direccion">Dirección</label>
+            <input type="text" name="direccion" id="direccion" required />
+          </li>
+
+          <li>
+            <label for="provincia">Provincia</label>
+            <select name="provincias" id="provincia">
+              <option value="A Coruña">A Coruña</option>
+              <option value="Lugo">Lugo</option>
+              <option value="Pontevedra">Pontevedra</option>
+              <option value="Ourense">Ourense</option>
+            </select>
+          </li>
+
+          <li>
+            <label for="comentarios">Comentarios</label>
+            <textarea
+              name="comentarios"
+              id="comentarios"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </li>
+
+          <li>
+            <label for="newsletter">Recibir Newsletter?</label>
+            <input type="checkbox" name="newsletter" id="newsletter" checked />
+          </li>
+        </ul>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <footer>
+      <div></div>
+    </footer>
+  </body>
+</html>

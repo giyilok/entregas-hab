@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vacas</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Vacas</h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="#texto1" title="Lorem 1">Lorem ipsum</a>
+          </li>
+          <li>
+            <a href="#texto2" title="Lorem 2">Lorem ipsum</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="." title="Comprar">Comprar</a>
+    </header>
+
+    <main>
+      <section id="texto1">
+        <h2>Lorem ipsum</h2>
+        <div class="texto">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas ullam
+            nihil nobis incidunt, enim similique odit debitis consectetur eius
+            vel quaerat sunt aliquam, facere iusto beatae provident numquam nisi
+            ipsam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At sequi,
+            quidem voluptas voluptatum dolorem molestias vero reiciendis
+            facilis, architecto maiores odit. Ab aperiam sint error harum! Modi
+            autem odit odio!
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam
+            corporis hic temporibus eius voluptatibus eum enim reiciendis, id
+            unde rem! Sapiente inventore obcaecati libero amet quo dolores
+            necessitatibus, ut veritatis.
+          </p>
+        </div>
+      </section>
+
+      <section id="vacas">
+        <ul>
+          <li>
+            <article>
+              <header class="vaca1"></header>
+              <section>
+                <h2>Vaca 1</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates quam voluptatibus illum enim quod eius, deleniti
+                  veritatis quasi quisquam, hic adipisci perspiciatis doloribus
+                  excepturi. Deserunt ea fuga reprehenderit quo earum!
+                </p>
+              </section>
+              <a href=".">Comprar</a>
+            </article>
+          </li>
+
+          <li>
+            <article>
+              <header class="vaca2"></header>
+              <section>
+                <h2>Vaca 2</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates quam voluptatibus illum enim quod eius, deleniti
+                  veritatis quasi quisquam, hic adipisci perspiciatis doloribus
+                  excepturi. Deserunt ea fuga reprehenderit quo earum!
+                </p>
+              </section>
+              <a href=".">Comprar</a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <header class="vaca3"></header>
+
+              <section>
+                <h2>Vaca 3</h2>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptates quam voluptatibus illum enim quod eius, deleniti
+                  veritatis quasi quisquam, hic adipisci perspiciatis doloribus
+                  excepturi. Deserunt ea fuga reprehenderit quo earum!
+                </p>
+              </section>
+
+              <a href=".">Comprar</a>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+      <form action="." method="POST" id="texto2">
+        <ul>
+          <li>
+            <fieldset class="name">
+              <label for="nombre">Nome e apelidos</label>
+              <input type="text" name="nombre" id="nombre" required />
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset class="direction">
+              <label for="direccion">Dirección</label>
+              <input type="text" name="direccion" id="direccion" required />
+            </fieldset>
+          </li>
+
+          <li>
+            <fieldset class="selector">
+              <label for="provincia">Provincia</label>
+              <select name="provincias" id="provincia">
+                <option value="empty"></option>
+                <option value="A Coruña">A Coruña</option>
+                <option value="Lugo">Lugo</option>
+                <option value="Pontevedra">Pontevedra</option>
+                <option value="Ourense">Ourense</option>
+              </select>
+            </fieldset>
+          </li>
+
+          <li class="comments">
+            <fieldset class="comments">
+              <label for="comentarios">Comentarios</label>
+              <textarea
+                name="comentarios"
+                id="comentarios"
+                cols="30"
+                rows="7"
+              ></textarea>
+            </fieldset>
+          </li>
+
+          <li class="news">
+            <fieldset class="news">
+              <label for="newsletter">Recibir Newsletter?</label>
+              <input type="checkbox" name="newsletter" id="newsletter" />
+            </fieldset>
+          </li>
+
+          <li>
+            <button type="submit">Enviar</button>
+          </li>
+        </ul>
+      </form>
+    </footer>
+  </body>
+</html>

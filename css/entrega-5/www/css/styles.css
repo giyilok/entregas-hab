@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f19a4b;
+  min-height: 100vh;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+body > header {
+  background-image: url(/img/vaca-portada.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: space-between;
+}
+
+header > h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  width: 100%;
+  flex-grow: 2;
+  padding-right: 3rem;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header a {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+header nav ul li a {
+  color: black;
+  display: block;
+  margin: 0 0 0.25rem 1rem;
+}
+
+header > a {
+  display: block;
+  color: white;
+  background: black;
+  padding: 0.5rem 2rem;
+  margin: 0.25rem 0.5rem;
+}
+/*************Fin cabecera****************/
+
+main {
+  margin: 1rem 1rem;
+}
+
+main p {
+  padding: 0.5rem 0;
+}
+
+main h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+main section#vacas ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+main section#vacas ul li {
+  margin-top: 1rem;
+  max-width: 250px;
+}
+
+main section#vacas article {
+  background: black;
+  color: white;
+}
+
+main section#vacas article header {
+  background-size: cover;
+  background-position: center center;
+  padding: 8rem 0;
+}
+
+header.vaca1 {
+  background-image: url(/img/vaca1.jpg);
+}
+
+header.vaca2 {
+  background-image: url(/img/vaca2.jpg);
+}
+
+header.vaca3 {
+  background-image: url(/img/vaca3.jpg);
+}
+
+article section {
+  margin: 1rem;
+  font-size: 0.8rem;
+}
+
+article section h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
+
+article a {
+  display: block;
+  text-align: center;
+  background: #c4c4c4;
+  color: black;
+  padding: 1rem 0;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+div.texto {
+  margin-bottom: 3rem;
+}
+
+div.texto p {
+  font-size: 0.9rem;
+}
+
+/********Fin main ****************/
+
+/******** Footer *****************/
+footer {
+  background: white;
+  margin-top: 1rem;
+  margin-bottom: 10rem;
+}
+
+footer h2 {
+  color: #f19a4b;
+  font-size: 3.5rem;
+  font-weight: lighter;
+  margin: 1rem 1rem;
+}
+
+footer form ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: space-between;
+}
+
+footer form ul li {
+  width: 50%;
+}
+
+footer form ul li.comments,
+li.news {
+  width: 100%;
+}
+
+footer form input[type="text"],
+select {
+  width: 100%;
+  padding: 6px 0;
+  border: 1px solid black;
+}
+
+footer form fieldset {
+  margin: 1rem;
+  border: 0;
+}
+
+footer form fieldset label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+}
+
+select {
+  border-radius: unset;
+}
+
+textarea {
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+input,
+textarea,
+select {
+  background-color: #f19a4b;
+}
+
+fieldset.news label {
+  display: inline-block;
+}
+
+button {
+  font-size: 0.8rem;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+  margin: 0 1rem 2rem 1rem;
+}
+
+/******* mediaquery ********/
+
+@media (min-width: 600px) {
+  main section#vacas ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  main section#texto1 div.texto {
+    columns: 2;
+  }
+
+  body > header {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+  }
+
+  body > header > h1 {
+    width: 10%;
+  }
+
+  body > header > nav {
+    order: -1;
+  }
+}

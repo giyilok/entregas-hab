@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exchange</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <form id="rateform" action="">
+        <p>Quiero convertir</p>
+        <input
+          type="number"
+          id="money"
+          placeholder="Cantidad"
+          autofocus
+          required
+        />
+        <select name="exchange1" id="exchange1"></select>
+
+        <p>A...</p>
+
+        <select name="exchange2" id="exchange2"></select>
+        <button id="turn" type="button" name="Convertir moneda">
+          Convertir
+        </button>
+      </form>
+
+      <p id="result"></p>
+    </main>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

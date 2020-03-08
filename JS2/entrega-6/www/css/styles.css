@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --borderblack: 0;
+  margin: 1rem auto;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  min-height: 20vh;
+  background: #18a383;
+}
+
+main {
+  background: white;
+  margin-top: 1rem;
+  margin: 0 auto;
+  max-width: 300px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+form#rateform {
+  border: var(--borderblack);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+form#rateform > * {
+  border: var(--borderblack);
+  flex-basis: 40%;
+  padding: 1rem 1rem;
+}
+
+form#rateform input,
+select,
+button {
+  background: #18a383;
+  margin: 0 0.5rem;
+}
+
+form#rateform input {
+  max-width: 120px;
+  font-size: 1rem;
+}
+
+form#rateform p {
+  flex-basis: 100%;
+  font-size: 1.5rem;
+}
+
+p#result {
+  margin: 2rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+form#rateform button,
+select {
+  border-radius: 25px;
+  font-size: 1rem;
+}

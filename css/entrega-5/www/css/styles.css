@@ -8,6 +8,16 @@
   text-decoration: none;
 }
 
+/* Variables en css*/
+html {
+  --orange: #f29942;
+}
+
+h3 {
+  background: var(--orange);
+}
+/**************************/
+
 body {
   font-family: "Open Sans", sans-serif;
   background: #f19a4b;
@@ -82,7 +92,7 @@ main section#vacas ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 3rem auto;
 }
 
 main section#vacas ul li {
@@ -91,6 +101,8 @@ main section#vacas ul li {
 }
 
 main section#vacas article {
+  display: flex;
+  flex-direction: column;
   background: black;
   color: white;
 }
@@ -114,14 +126,18 @@ header.vaca3 {
 }
 
 article section {
-  margin: 1rem;
+  margin: 0 1rem;
   font-size: 0.8rem;
+  flex-grow: 1;
 }
 
 article section h2 {
   font-size: 3rem;
   text-align: center;
-  padding-bottom: 0.8rem;
+}
+
+article section p {
+  padding-top: 0;
 }
 
 article a {
@@ -155,6 +171,7 @@ footer h2 {
   color: #f19a4b;
   font-size: 3.5rem;
   font-weight: lighter;
+  padding-right: 4rem;
   margin: 1rem 1rem;
 }
 
@@ -195,6 +212,7 @@ footer form fieldset label {
 
 select {
   border-radius: unset;
+  -webkit-appearance: none;
 }
 
 textarea {
@@ -231,6 +249,20 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  section#vacas li {
+  }
+
+  section#vacas li article {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  section#vacas li article section {
+    flex-grow: 1;
   }
 
   main section#texto1 div.texto {

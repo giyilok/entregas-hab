@@ -15,7 +15,7 @@ async function getRates(url) {
 //Funcion para añadir los nombres de los rates a los selectores
 async function fillSelect() {
   try {
-    const data = await getRates(urlExchange + "EUR");
+    const data = await getRates(urlExchange + "AED");
     const fragment = document.createDocumentFragment();
 
     for (const select of selects) {
@@ -39,7 +39,6 @@ function calculateExchange(ammount, currencyCode1, currencyCode2) {
   getRates(urlExchange1).then(change => {
     const result1 =
       Math.round(ammount * change.rates[currencyCode2] * 100) / 100;
-    console.log(`${ammount} ${currencyCode1} son ${result1} ${currencyCode2}`);
     result.textContent = `${ammount} ${currencyCode1} son ${result1} ${currencyCode2}`;
   });
 }
@@ -55,7 +54,7 @@ function handlerButton(event) {
 function main() {
   fillSelect();
 
-  button.addEventListener("click", handlerButton);
+  button.addEventListener("submit", handlerButton);
 }
 
 main();

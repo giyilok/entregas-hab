@@ -36,7 +36,7 @@ async function fillSelect() {
 function calculateExchange(ammount, currencyCode1, currencyCode2) {
   const urlExchange1 = urlExchange + currencyCode1;
 
-  getRates(urlExchange1).then(change => {
+  getRates(urlExchange1).then((change) => {
     const result1 =
       Math.round(ammount * change.rates[currencyCode2] * 100) / 100;
     result.textContent = `${ammount} ${currencyCode1} son ${result1} ${currencyCode2}`;
@@ -54,7 +54,7 @@ function handlerButton(event) {
 function main() {
   fillSelect();
 
-  button.addEventListener("submit", handlerButton);
+  button.addEventListener("click", handlerButton);
 }
 
 main();

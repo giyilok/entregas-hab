@@ -24,16 +24,16 @@ const {
   cleanAll,
 } = minimist(argv);
 
-function main() {
+async function main() {
   try {
     //Procesamos las opciones
     if (clean) {
-      cleanTodos();
+      await cleanTodos();
       process.exit();
     }
 
     if (cleanAll) {
-      cleanAllTodos();
+      await cleanAllTodos();
       process.exit();
     }
 
@@ -48,17 +48,17 @@ function main() {
     }
 
     if (done) {
-      markAsDone({ index: done });
+      await markAsDone({ index: done });
       process.exit();
     }
 
     if (undone) {
-      markAsUndone({ index: undone });
+      await markAsUndone({ index: undone });
       process.exit();
     }
 
     if (_ != "") {
-      addTodo({
+      await addTodo({
         text: _.join(" "),
         priority,
       });

@@ -14,7 +14,7 @@ const state = {
 };
 
 //Funcion para cargar o crear si aún no existe el fichero JSON con los  datos
-function loadData() {
+async function loadData() {
   //Comprobamos si existe el fichero task.json y si no lo crea
   fse.ensureFileSync(tasksPath);
 
@@ -47,7 +47,7 @@ function getDate() {
 }
 
 //Funcion para añadir la tarea
-function addTodo({ text, priority }) {
+async function addTodo({ text, priority }) {
   const existingTodo = state.todos.find(
     (todo) => todo.task.toLowerCase() === text.toLowerCase()
   );
@@ -66,7 +66,7 @@ function addTodo({ text, priority }) {
 
   state.todos.unshift(newTodo);
 
-  saveChanges();
+  await saveChanges();
 }
 
 //Funcion para validar los indices
@@ -81,25 +81,25 @@ function checkIndex(index) {
 }
 
 //Funcion para marcar una tarea como hecha
-function markAsDone({ index }) {
+async function markAsDone({ index }) {
   checkIndex(index);
 
   state.todos[index - 1].done = true;
 
   state.todos[index - 1].lastUpdate = getDate();
 
-  saveChanges();
+  await saveChanges();
 }
 
 //Funcion para desmarcar como hecha la tarea
-function markAsUndone({ index }) {
+async function markAsUndone({ index }) {
   checkIndex(index);
 
   state.todos[index - 1].done = false;
 
   state.todos[index - 1].lastUpdate = getDate();
 
-  saveChanges();
+  await saveChanges();
 }
 
 //Funcion para listar por consola toda la lista de tareas
@@ -154,22 +154,22 @@ function listTodosTable() {
 }
 
 //Funcion para borrar todas las tareas marcadas como realizadas
-function cleanTodos() {
+async function cleanTodos() {
   const cleanList = state.todos.filter((todo) => todo.done === false);
   state.todos = cleanList;
-  saveChanges();
+  await saveChanges();
 }
 
 //Funcion para borrar toda la lista de tareas
-function cleanAllTodos() {
+async function cleanAllTodos() {
   state.todos = [];
-  saveChanges();
+  await saveChanges();
 }
 
 //Funcion para guardar los cambios
-function saveChanges() {
+async function saveChanges() {
   state.lastUpdate = getDate();
-  fse.outputJSONSync(tasksPath, state);
+  await fse.outputJSON(tasksPath, state);
 }
 
 //Cargamos los datos guardados en el fichero

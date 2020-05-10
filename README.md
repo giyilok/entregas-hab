@@ -9,3 +9,6 @@ Entregas Hack a Boos
 2020-02-23: Entrega 5 css: maquetacion web de vacas
 2020-03-08: Entrega 6 Javascript 2
 2020-03-15: Entrega 7 SQL Videoclub
+2020-04-26: Entrega 8 Backend App Tareas
+2020-05-03: Entrega 9 Backend pack de ejercicios
+2020-05-10: Entrega 10 Backend App diario de viajes

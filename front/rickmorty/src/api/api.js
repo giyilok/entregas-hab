@@ -14,7 +14,13 @@ function getChar(id) {
   return axios.get(`${apiUrl}/character/` + id);
 }
 
+// Función para obtener la siguiente o anterior página
+function getPage(url) {
+  return axios.get(url);
+}
+
 export default {
   getAll,
   getChar,
+  getPage,
 };

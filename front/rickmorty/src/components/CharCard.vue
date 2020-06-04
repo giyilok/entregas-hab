@@ -11,16 +11,14 @@
             deadp: char.status === 'Dead',
             unknownp: char.status === 'unknown',
           }"
-        >
-          ID: {{ char.id }}
-        </p>
+        >ID: {{ char.id }}</p>
         <h2>{{ char.name }}</h2>
 
         <div class="item-info">
           <p>Species: {{ char.species }}</p>
           <p>Gender: {{ char.gender }}</p>
           <p>Origin: {{ char.origin.name }}</p>
-          <p>Last Known location: {{ char.location.name }}</p>
+          <p>Last known location: {{ char.location.name }}</p>
         </div>
         <p
           class="status"
@@ -30,9 +28,9 @@
             unknown: char.status === 'unknown',
           }"
         >
-          Status: <strong>{{ char.status }}</strong>
+          Status:
+          <strong>{{ char.status }}</strong>
         </p>
-        <!-- <p>{{ char.origin.url }}</p> -->
       </div>
     </div>
   </div>
@@ -42,8 +40,8 @@
 export default {
   name: "CharCard",
   props: {
-    chars: Array,
-  },
+    chars: Array
+  }
 };
 </script>
 
@@ -96,6 +94,7 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: -6px 11px 22px 1px rgba(181, 174, 181, 1);
 }
 
 h2 {
@@ -110,11 +109,8 @@ h2 {
 img {
   width: 100%;
   display: inline-block;
-  object-fit: cover;
 }
 
-h2 {
-}
 .item-info {
   flex-grow: 1;
 }
@@ -126,6 +122,6 @@ h2 {
   border-top: 1px solid grey;
   font-weight: bold;
   text-align: center;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="info">
     <h1>Hola!</h1>
-    <img :src="info.imagen" alt="Mi foto" />
+    <img src="../assets/giyi.jpg" alt="Mi foto" />
     <p>
       Soy
       <a :href="info.social">{{ info.name }},</a>
@@ -24,33 +24,40 @@
 export default {
   name: "AboutCard",
   props: {
-    info: Object,
-  },
+    info: Object
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* .card {
-  width: 400px;
-  border: 1px solid black;
-  margin: 1rem;
-  border-radius: 4%;
-  overflow: hidden;
-  display: inline-block;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+.info {
+  text-align: center;
 }
 
 img {
+  display: block;
   height: 20vh;
   border-radius: 50%;
+  margin: 1rem auto;
 }
 
 li {
   list-style: none;
-} */
+}
+
+.info p {
+  margin: 0 auto;
+}
 
 a {
+  display: inline-block;
   text-decoration: none;
-  color: black;
+  color: #ff2f56;
 }
 </style>

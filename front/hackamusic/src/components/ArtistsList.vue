@@ -2,7 +2,7 @@
   <div>
     <div class="artist" v-for="(artist, index) in artists" :key="artist.id">
       <div class="image-container">
-        <img src="../assets/singer.jpg" alt="" />
+        <img src="../assets/singer.jpg" alt />
       </div>
       <h2>Ranking {{ index + 1 }}</h2>
       <p>Name: {{ artist.name }}</p>
@@ -16,8 +16,8 @@
 export default {
   name: "Artists",
   props: {
-    artists: Array,
-  },
+    artists: Array
+  }
 };
 </script>
 

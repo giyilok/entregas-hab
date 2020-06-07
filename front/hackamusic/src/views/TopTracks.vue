@@ -1,10 +1,7 @@
 <template>
   <div>
     <!-- Configuración título de vista -->
-    <vue-headful
-      title="Top Tracks List"
-      description="List of most popular tracks"
-    />
+    <vue-headful title="Top Tracks List" description="List of most popular tracks" />
     <!-- Configuración título de vista -->
 
     <!-- Menú custom -->
@@ -18,6 +15,7 @@
       <div class="menu-blank"></div>
 
       <h1>Latest hits</h1>
+      <h2>Top 15</h2>
 
       <!-- CSS Loader  -->
       <div v-show="visible" class="lds-spinner">
@@ -37,12 +35,12 @@
       <!-- CSS Loader  -->
 
       <!--  Componente lista de tracks -->
-      <trackList
-        class="track-list"
-        v-show="!visible"
-        :tracks="tracks"
-      ></trackList>
+      <trackList class="track-list" v-show="!visible" :tracks="tracks"></trackList>
       <!--  Componente lista de tracks -->
+
+      <!-- Footer custom -->
+      <footercustom v-show="!visible"></footercustom>
+      <!-- Footer custom -->
     </div>
   </div>
 </template>
@@ -59,12 +57,13 @@ export default {
   data() {
     return {
       tracks: [],
-      visible: true,
+      visible: true
     };
   },
   components: {
     trackList,
     menucustom,
+    footercustom
   },
   async created() {
     const response = await api.getTopTracks();
@@ -75,7 +74,7 @@ export default {
 
     this.tracks = response.data.tracks.track;
     console.log(response);
-  },
+  }
 };
 </script>
 
@@ -83,6 +82,19 @@ export default {
 .menu-blank {
   height: 65px;
   width: 100%;
+}
+
+h1,
+h2 {
+  font-weight: 42px;
+}
+
+h1 {
+  margin-top: 2rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 .top-tracks {
@@ -95,7 +107,6 @@ export default {
   width: 70%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  border: 1px solid black;
+  align-items: center;
 }
 </style>

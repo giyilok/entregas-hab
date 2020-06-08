@@ -1,10 +1,7 @@
 <template>
   <div>
     <!-- Configuración título de vista -->
-    <vue-headful
-      title="Top Artists List"
-      description="List of most popular artists"
-    />
+    <vue-headful title="Top Artists List" description="List of most popular artists" />
     <!-- Configuración título de vista -->
 
     <!-- Menú custom -->
@@ -25,19 +22,21 @@
             placeholder="Enter the artist`s name"
             name="bySearch"
           />
-          <button>Search</button>
+          <button @click.prevent="searchArtist">Search</button>
         </div>
       </form>
       <!-- Barra de búsqueda-->
 
       <!-- Contenido de la vista-->
-      <h1>Last week most popular artists</h1>
-      <h2>TOP 10</h2>
+      <div v-show="!visible">
+        <h1>Last week most popular artists</h1>
+        <h2>TOP 10</h2>
+      </div>
 
       <!-- Contenido de la vista-->
 
       <!-- CSS Loader-->
-      <div v-show="visible" class="lds-spinner">
+      <div v-show="loader" class="lds-spinner">
         <div></div>
         <div></div>
         <div></div>
@@ -53,13 +52,10 @@
       </div>
       <!-- CSS Loader-->
 
+      <artistsList class="artists-list" v-show="visible" :artists="artistsSearched"></artistsList>
       <!-- Lista de artistas-->
       <div>
-        <artistsList
-          class="artists-list"
-          v-show="!visible"
-          :artists="filteredArtists"
-        ></artistsList>
+        <artistsList class="artists-list" v-show="!visible" :artists="filteredArtists"></artistsList>
       </div>
       <footercustom v-show="!visible"></footercustom>
     </div>
@@ -72,42 +68,73 @@ import api from "@/api/index.js";
 import artistsList from "@/components/ArtistsList.vue";
 import menucustom from "@/components/MenuCustom.vue";
 import footercustom from "@/components/FooterCustom.vue";
+import Swal from "sweetalert2";
 
 export default {
   name: "TopArtists",
   data() {
     return {
       artists: [],
+      artistsSearched: [],
       search: "",
       visible: true,
+      loader: true
     };
   },
   components: {
     artistsList,
     menucustom,
-    footercustom,
+    footercustom
+  },
+  methods: {
+    async searchArtist() {
+      try {
+        // Si se presiona el botón y el campo de búsqueda está vacío o es un número
+        if (this.search === "" || !isNaN(this.search)) {
+          throw new Error("Debes introducir un nombre para poder buscar");
+        }
+
+        // Borra el array
+        if (this.artistsSearched.length) {
+          this.artistsSearched.splice(0);
+        }
+
+        const response = await api.searchByName(this.search);
+        this.artistsSearched = response.data.results.artistmatches.artist;
+        this.visible = true;
+      } catch (error) {
+        Swal.fire({
+          title: "Error",
+          text: error.message,
+          icon: "error",
+          confirmButtonText: "Ok"
+        });
+      }
+    }
   },
   async created() {
     const response = await api.getArtists();
     this.artists = response.data.topartists.artist;
-    console.log(this.artists);
   },
   computed: {
     filteredArtists() {
+      // Retardo intencionado en la carga para que mole más
       setTimeout(() => {
+        this.loader = false;
         this.visible = false;
-      }, 2000);
+      }, 1500);
+
       // Si search está vacío
       if (!this.search) {
         return this.artists;
       }
 
       // Si search tiene algo...
-      return this.artists.filter((artist) =>
+      return this.artists.filter(artist =>
         artist.name.toLowerCase().includes(this.search.toLowerCase())
       );
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -165,7 +192,7 @@ button {
   padding: 9px 16px;
   font-size: 16px;
   font-weight: 600;
-  margin: 0 12px;
+  margin: 10px 12px 0;
   outline: none;
 }
 </style>

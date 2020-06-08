@@ -5,7 +5,7 @@
         <img src="../assets/singer.jpg" alt />
       </div>
       <h2>Ranking {{ index + 1 }}</h2>
-      <p>Name: {{ artist.name }}</p>
+      <p class="long-name">Name: {{ artist.name }}</p>
       <p>Listeners: {{ artist.listeners }}</p>
       <a :href="artist.url">More info</a>
     </div>
@@ -50,6 +50,10 @@ a {
   color: #ff2f56;
   font-weight: bold;
   padding: 6px;
+}
+
+.long-name {
+  flex-grow: 1;
 }
 
 h2,

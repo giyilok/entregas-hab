@@ -12,7 +12,16 @@
 
     <div class="menu-blank"></div>
 
-    <aboutCard :info="info" :libs="info.libs"></aboutCard>
+    <!-- Contenido de la vista -->
+    <div class="view-content">
+      <aboutCard class="aboutcard" :info="info"></aboutCard>
+
+      <!-- Menú custom-->
+      <footercustom class="footer"></footercustom>
+      <!-- Menú custom-->
+
+      <!-- Contenido de la vista -->
+    </div>
   </div>
 </template>
 
@@ -55,5 +64,18 @@ export default {
 .menu-blank {
   height: 65px;
   width: 100%;
+}
+
+.view-content {
+  margin: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
 }
 </style>

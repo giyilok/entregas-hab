@@ -42,8 +42,19 @@ async function getTopTags() {
   }
 }
 
+async function searchByName(search) {
+  try {
+    const response = axios.get(
+      `${URL_BASE}/2.0/?method=artist.search&artist=${search}&api_key=${apiKey}&format=json`
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
 export default {
   getArtists,
   getTopTracks,
   getTopTags,
+  searchByName,
 };

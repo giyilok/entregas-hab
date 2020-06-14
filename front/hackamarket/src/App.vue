@@ -12,7 +12,8 @@ html {
 
 body {
   margin: 0;
-  margin-bottom: 70px;
+  /*   margin-bottom: 70px;
+ */
 }
 
 #app {
@@ -40,7 +41,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: 80px;
 }
 
 /* Css Loader Spinner */

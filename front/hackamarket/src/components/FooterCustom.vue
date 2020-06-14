@@ -25,6 +25,6 @@ p {
 }
 
 span {
-  color: #ff2f56;
+  color: #df7438;
 }
 </style>

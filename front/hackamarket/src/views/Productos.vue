@@ -113,8 +113,7 @@ export default {
   computed: {
     filteredProducts() {
       // Por defecto imprime el array de productos
-      /* this.print = false;
-      this.empty = false; */
+      /* this.print = false; */
 
       // Si el input search está vacío
       if (!this.search) {
@@ -134,7 +133,9 @@ export default {
   },
   // Hook created
   created() {
+    // Obtiene la lista de productos
     this.getProducts();
+    // Forzamos 2 segundos el loader spinner para que mole más
     setTimeout(() => {
       this.print = false;
     }, 2000);

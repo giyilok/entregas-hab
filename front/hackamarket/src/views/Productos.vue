@@ -155,6 +155,10 @@ body {
   margin-bottom: 80px;
 }
 
+.loader {
+  margin: 2rem auto;
+}
+
 .blank {
   width: 100%;
   height: 80px;

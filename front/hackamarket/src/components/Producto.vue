@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <div class="productos" v-for="(producto, index) in productos" :key="producto.id">
+  <div class="productos">
+    <div class="producto" v-for="(producto, index) in productos" :key="producto.id">
       <img :src="producto.img" alt="Imagen" />
       <p>Nombre: {{producto.nombre}}</p>
       <p>Descripción: {{ producto.descripcion }}</p>
       <p
         :class="{red: producto.estado === 'no disponible', green: producto.estado === 'disponible'}"
       >{{ producto.estado }}</p>
-      <!-- No se muestra en la tienda el stock de los productos
-      <p>Stock: {{ producto.stock }}</p>-->
+      <p
+        :class="{red: producto.stock === 0, green: producto.estado === 'disponible'}"
+      >Stock: {{ producto.stock }}</p>
       <p>Precio: {{ producto.precio }}€</p>
       <br />
       <!-- Botón para comprar, no se muestra si el stock es cero -->
@@ -37,13 +38,28 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
 .productos {
+  margin: 25px auto 0;
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.producto {
   border: 1px solid blue;
   border-radius: 12px;
   width: 200px;
-  padding: 10px;
   margin: 1rem auto;
-  margin: o auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .red {
@@ -52,5 +68,26 @@ export default {
 
 .green {
   color: green;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  width: 70px;
+  padding: 4px 0;
+  border: none;
+  font-size: 14px;
+  color: #42b983;
+  background: white;
+  border: 1px solid;
+  border-radius: 18px;
+  font-weight: 300;
+  margin: 0 10px 1rem;
+}
+
+p:nth-child(3) {
+  flex-grow: 1;
 }
 </style>

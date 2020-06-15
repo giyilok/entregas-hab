@@ -10,6 +10,8 @@
     <menucustom></menucustom>
     <!--  Menú de navegación  -->
 
+    <div class="blank"></div>
+
     <!--  Componente con la info  -->
     <aboutCard :info="info" :libs="info.libs"></aboutCard>
     <!--  Componente con la info  -->
@@ -53,4 +55,15 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.blank {
+  width: 100%;
+  height: 80px;
+}
+
+.footercustom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+</style>

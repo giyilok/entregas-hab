@@ -12,8 +12,6 @@ html {
 
 body {
   margin: 0;
-  /*   margin-bottom: 70px;
- */
 }
 
 #app {
@@ -22,13 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-.footercustom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
 }
 
 /* Css Loader Spinner */

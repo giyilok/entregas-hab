@@ -10,6 +10,8 @@
     <menucustom></menucustom>
     <!--  Menú de navegación  -->
 
+    <div class="blank"></div>
+
     <!-- Listado de clientes -->
     <h2>Clientes de Hackamarket</h2>
     <h2>Listado 👇</h2>
@@ -189,12 +191,30 @@ export default {
 
 
 <style scoped>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
 .clientes {
   border: 1px solid blue;
   border-radius: 12px;
   width: 200px;
   padding: 10px;
   margin: 1rem auto;
+}
+
+.footercustom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.blank {
+  width: 100%;
+  height: 80px;
 }
 
 .modal {

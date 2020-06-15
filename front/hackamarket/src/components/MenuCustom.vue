@@ -6,8 +6,11 @@
       <router-link :to="{name: 'Productos'}">Productos</router-link>
       <router-link :to="{name: 'About'}">About</router-link>
     </div>
-    <p>Hola, {{ email }}</p>
-    <button @click="logoutUser">Logout</button>
+
+    <div class="info">
+      <span>Hola, {{ name }}</span>
+      <button @click="logoutUser">Logout</button>
+    </div>
   </div>
 </template>
 
@@ -28,7 +31,11 @@ export default {
       return clearLogin();
     },
     getUserEmail() {
-      this.email = localStorage.getItem("email");
+      const email = localStorage.getItem("email");
+      this.name = email
+        .split("@")
+        .slice(0, 1)
+        .shift();
     }
   },
   created() {
@@ -47,6 +54,27 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: content-box;
+  margin-bottom: 70px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  background: white;
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  border: 1px solid #2c3e50;
+}
+
+.info {
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
 }
 
 p {
@@ -54,16 +82,28 @@ p {
   font-size: 18px;
 }
 
+#nav {
+  padding: 15px;
+  display: inline-block;
+  flex-grow: 1;
+}
+
 #nav a {
   margin: 0 5px;
   text-decoration: none;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 
 button {
-  width: 80px;
-  padding: 5px 0;
+  width: 70px;
+  padding: 4px 0;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
   color: #42b983;
   background: white;
   border: 1px solid;

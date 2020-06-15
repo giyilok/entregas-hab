@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="productos">
     <!--  Título de la pestaña -->
     <div>
       <vue-headful title="Productos" description="Listado de productos" />
@@ -10,6 +10,7 @@
     <menucustom></menucustom>
     <!--  Menú de navegación  -->
 
+    <div class="blank"></div>
     <!-- Barra de búsqueda filtrada -->
     <form>
       <div class="box">
@@ -144,6 +145,31 @@ export default {
 </script>
 
 <style scoped>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body {
+  margin-bottom: 80px;
+}
+
+.blank {
+  width: 100%;
+  height: 80px;
+}
+
+.footercustom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.productos {
+}
+
 /* form {
   margin: 120px auto 40px;
   display: flex;

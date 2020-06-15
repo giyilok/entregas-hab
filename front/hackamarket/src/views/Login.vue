@@ -5,8 +5,11 @@
       <vue-headful title="Login" description="Formulario para hacer login" />
     </div>
     <!--  Título de la pestaña -->
+
+    <!-- Formulario de login -->
     <div class="container">
-      <h2>HackaMarket Para comprar inicia sesión</h2>
+      <h2>HackaMarket</h2>
+      <h3>Para comprar inicia sesión</h3>
       <form>
         <label for="email">Email</label>
         <br />
@@ -36,6 +39,8 @@
         <router-link :to="{name: 'Register'}">O puedes registrarte aquí</router-link>
       </form>
     </div>
+    <!-- Formulario de login -->
+
     <!--  Footer  -->
     <footercustom class="footercustom"></footercustom>
     <!--  Footer  -->
@@ -136,12 +141,17 @@ export default {
   transform: translate(-50%, -50%);
   padding: 20px 25px;
   width: 250px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   border-radius: 18px;
 }
 
 .container h2 {
+  text-align: center;
+  color: #fafafa;
+}
+
+.container h3 {
   text-align: left;
   color: #fafafa;
   margin-bottom: 20px;

@@ -217,6 +217,10 @@ export default {
   height: 80px;
 }
 
+.loader {
+  margin: 6rem auto;
+}
+
 .modal {
   position: fixed;
   top: 0;

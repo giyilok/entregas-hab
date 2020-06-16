@@ -10,6 +10,8 @@
     <menucustom></menucustom>
     <!--  Menú de navegación  -->
 
+    <div class="blank"></div>
+
     <!-- Formulario para añadir clientes-->
     <addclientform v-on:addclient="addClient"></addclientform>
 
@@ -100,4 +102,14 @@ export default {
 </script>
 
 <style scoped>
+.blank {
+  width: 100%;
+  height: 80px;
+}
+
+.footercustom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 </style>

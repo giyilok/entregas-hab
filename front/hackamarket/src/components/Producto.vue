@@ -2,8 +2,8 @@
   <div class="productos">
     <div class="producto" v-for="(producto, index) in productos" :key="producto.id">
       <img :src="producto.img" alt="Imagen" />
-      <p>Nombre: {{producto.nombre}}</p>
-      <p>Descripción: {{ producto.descripcion }}</p>
+      <h2>{{producto.nombre}}</h2>
+      <p>{{ producto.descripcion }}</p>
       <p
         :class="{red: producto.estado === 'no disponible', green: producto.estado === 'disponible'}"
       >{{ producto.estado }}</p>
@@ -54,7 +54,7 @@ export default {
 .producto {
   border: 1px solid blue;
   border-radius: 12px;
-  width: 200px;
+  width: 250px;
   margin: 1rem auto;
   overflow: hidden;
   display: flex;
@@ -72,6 +72,7 @@ export default {
 
 img {
   width: 100%;
+  height: 200px;
 }
 
 button {
@@ -85,6 +86,11 @@ button {
   border-radius: 18px;
   font-weight: 300;
   margin: 0 10px 1rem;
+}
+
+h2,
+p {
+  margin: 2px 1rem;
 }
 
 p:nth-child(3) {
